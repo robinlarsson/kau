@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" data-framework="backbonejs">
+<head>
+    <meta charset="utf-8">
+    <title>Kau</title>
+    <link rel="stylesheet" href="resources/base.css">
+    <link rel="stylesheet" href="node_modules/datatables/media/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<section class="apkapp">
+    <header class="header">
+        <h1>APK</h1>
+    </header>
+    <section class="main">
+        <table id="apk-table" class="apk-list" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Dryck</th>
+                <th>Volym</th>
+                <th>Procent</th>
+                <th>Pris</th>
+                <th>APK</th>
+                <th>Uppdaterat Pris</th>
+            </tr>
+            </thead>
+            <tbody class="apk-row"></tbody>
+        </table>
+    </section>
+</section>
+
+APK<br>
+(Volym * (Procent / 10)) / Pris
+
+<script type="text/template" id="item-template">
+    <td><%- id %></td>
+    <td><%- beverage %></td>
+    <td><%- volume %></td>
+    <td><%- percentage %></td>
+    <td><%- price %></td>
+    <td><%- apk %></td>
+    <td><%- updatedPriceDate %></td>
+</script>
+
+<div id="apk-modal" class="modal fade">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Pass</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Dryck: <span id="beverage"></span><br>
+                APK: <span id="apk"></span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="node_modules/moment/min/moment.min.js"></script>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="node_modules/underscore/underscore.js"></script>
+<script src="node_modules/backbone/backbone.js"></script>
+<script src="node_modules/tether/dist/js/tether.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="js/models/beverage.js"></script>
+<script src="js/collections/beveragesCollection.js"></script>
+<script src="js/views/beverageView.js"></script>
+<script src="js/views/app-view.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

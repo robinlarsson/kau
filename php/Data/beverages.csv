@@ -1,0 +1,4 @@
+id, beverage, volume, price, percentage, updatedPriceDate, typeOfBeverage, source
+1, Hof, 33, 20, 4.2, 2012-05-29 23:55:22, beer, 'Stadig typ'
+2, Export, 33, 24, 5.2, 2012-05-29 23:59:16, beer, 'Mindre stadig typ'
+3, Husets vin, 25, 27, 13.5, 2012-05-30 04:22:16, wine, 'Nått fyllo'
