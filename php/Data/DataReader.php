@@ -9,7 +9,7 @@ class DataReader
      *
      * @return array
      */
-    public function read(string $file)
+    public function read($file)
     {
         $rows = [];
         $headers = [];

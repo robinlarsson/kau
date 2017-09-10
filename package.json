@@ -8,6 +8,6 @@
     "bootstrap": "^4.0.0-alpha.6",
     "datatables": "^1.10.13",
     "tether": "^1.4.0",
-    "moment": "^2.0.0"
+    "moment": "^2.0.0",
   }
 }

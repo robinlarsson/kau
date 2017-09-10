@@ -7,14 +7,14 @@ use php\Data\DataReader;
 use php\Entity\Beverage;
 use DateTime;
 
-class BeverageCollectionBuilder {
-
+class BeverageCollectionBuilder
+{
     /**
      * @param string $file
      *
      * @return BeverageCollection
      */
-    public function build(string $file)
+    public function build($file)
     {
         $beverageCollection = new BeverageCollection();
         $dataReader = new DataReader();

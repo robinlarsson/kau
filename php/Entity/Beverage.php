@@ -27,14 +27,23 @@ class Beverage
     /** @var string */
     private $typeOfBeverage;
 
+    /**
+     * @param int $id
+     * @param string $beverage
+     * @param int $volume
+     * @param int $price
+     * @param string $percentage
+     * @param DateTime $updatedPriceDate
+     * @param string $typeOfBeverage
+     */
     public function __construct(
-        int $id,
-        string $beverage,
-        int $volume,
-        int $price,
-        string $percentage,
+        $id,
+        $beverage,
+        $volume,
+        $price,
+        $percentage,
         DateTime $updatedPriceDate,
-        string $typeOfBeverage
+        $typeOfBeverage
     ) {
         $this->id = $id;
         $this->beverage = $beverage;
