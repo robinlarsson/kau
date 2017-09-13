@@ -2,40 +2,53 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "hashicorp/precise64"
-  config.vm.network "forwarded_port", guest: 80, host: 8080
- # config.vm.network "public_network", ip: "10.0.2.15"
- # config.vm.network "forwarded_port", guest: 15443, host: 15443
+  config.vm.box = "bento/ubuntu-16.04"
+  config.vm.hostname = "localhost"
+  #config.vm.network "private_network", type: "dhcp"
+  config.vm.network "forwarded_port", guest: 80, host: 8080,
+    auto_correct: true
 
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
-    apt-get install -y apache2
-    apt-get install -y php5 libapache2-mod-php5 php5-cli
-    apt-get install -y vim tree
 
-    # Install latest stable version of `node` and `npm`
-    # https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager#ubuntu-mint-elementary-os
-    if ! which node &> /dev/null; then
-      sudo apt-get install -y python-software-properties python g++ make
-      sudo add-apt-repository -y ppa:chris-lea/node.js
-      sudo apt-get update
+    if ! which apache2 &> /dev/null; then
+        sudo apt-get install -y apache2
+    fi
+
+    if ! which php &> /dev/null; then
+        sudo apt-get install -y php libapache2-mod-php php-cli
+    fi
+
+    if ! which vim &> /dev/null; then
+        sudo apt-get install -y vim
+        sudo apt-get install -y tree
+    fi
+
+    if ! which nodejs &> /dev/null; then
       sudo apt-get install -y nodejs
+    fi
+
+    if ! which npm &> /dev/null; then
+      sudo apt-get install -y npm
     fi
 
     if ! which git &> /dev/null; then
       sudo apt-get install git -y
     fi
 
-    #cd /vagrant
-    #if ! test -d npm &> /dev/null; then
-     # git clone https://github.com/npm/npm.git
-      #cd npm
-      #npm install
-    #fi
+    if ! [ -L /var/www ]; then
+        sudo rm -rf /var/www
+        ln -s /vagrant /var/www
+    fi
 
-    sudo rm -rf /var/www
-    ln -s /vagrant /var/www
+    if ! cat /etc/apache2/httpd.conf &> /dev/null; then
+        echo "ServerName localhost" >> /etc/apache2/httpd.conf
+        echo "cd /vagrant" >> /home/vagrant/.bashrc
+    fi
 
-    echo "cd /vagrant" >> /home/vagrant/.bashrc
+    echo "cd /vagrant"
+    npm install
+
+    sudo service apache2 restart
   SHELL
 end
