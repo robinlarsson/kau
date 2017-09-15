@@ -42,10 +42,10 @@ Vagrant.configure("2") do |config|
 
     if ! cat /etc/apache2/httpd.conf &> /dev/null; then
         echo "ServerName localhost" >> /etc/apache2/httpd.conf
-        echo "cd /vagrant" >> /home/vagrant/.bashrc
+        echo "cd /var/www/html" >> /home/vagrant/.bashrc
     fi
 
-    echo "cd /vagrant"
+    echo "cd /var/www/html"
     npm install
 
     sudo service apache2 restart
