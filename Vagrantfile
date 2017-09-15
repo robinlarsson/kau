@@ -4,7 +4,6 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "bento/ubuntu-16.04"
   config.vm.hostname = "localhost"
-  #config.vm.network "private_network", type: "dhcp"
   config.vm.network "forwarded_port", guest: 80, host: 8080,
     auto_correct: true
 
@@ -37,8 +36,8 @@ Vagrant.configure("2") do |config|
     fi
 
     if ! [ -L /var/www ]; then
-        sudo rm -rf /var/www
-        ln -s /vagrant /var/www
+        sudo rm -rf /var/www/html
+        ln -s /vagrant /var/www/html
     fi
 
     if ! cat /etc/apache2/httpd.conf &> /dev/null; then

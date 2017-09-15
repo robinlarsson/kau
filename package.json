@@ -2,12 +2,10 @@
   "private": true,
   "dependencies": {
     "backbone": "^1.1.2",
-    "backbone.localstorage": "^1.1.16",
     "jquery": "^3.0.0",
     "underscore": "^1.7.0",
-    "bootstrap": "^4.0.0-alpha.6",
+    "bootstrap": "^3.3.7",
     "datatables": "^1.10.13",
-    "tether": "^1.4.0",
     "moment": "^2.0.0"
   }
 }
