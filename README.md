@@ -2,6 +2,7 @@
 
 Requirements
 PHP >= 5.3
+Node Package Manager (NPM, often talked about with NodeJS)
 
 Installation Option 1
 
@@ -24,4 +25,5 @@ Project Installation
 3. type 'vagrant ssh'
 4. Install dependencies manually with command 'npm install'
 
-todo phpunit tests
+ToDo
+phpunit tests
