@@ -1,8 +1,8 @@
 # kau
 
 Requirements
-PHP >= 5.3
-Node Package Manager (NPM, often talked about with NodeJS)
+* PHP >= 5.3
+* Node Package Manager (NPM, often talked about with NodeJS)
 
 Installation Option 1
 
