@@ -23,7 +23,6 @@ var app = app || {};
 		// Re-render the titles of the item.
 		render: function () {
 
-			console.log("render beveraview");
 			if (this.model.changed.id !== undefined) {
 				return;
 			}

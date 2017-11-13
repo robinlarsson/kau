@@ -15,7 +15,6 @@ var app = app || {};
         },
 
         parse: function(data) {
-            console.log(data);
             data.updatedPriceDate = moment(data.updatedPriceDate.date).format("YYYY-MM-DD HH:mm:ss");
 
             return data;

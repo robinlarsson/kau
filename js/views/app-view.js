@@ -13,7 +13,6 @@ var app = app || {};
 		// At initialization we bind to the relevant events on the records
 		// collection, when items are added or changed.
 		initialize: function () {
-			console.log("iniit app view");
 			this.$list = $('.apk-row');
 
 			this.listenTo(app.BeveragesCollection, 'reset', this.addAll);
