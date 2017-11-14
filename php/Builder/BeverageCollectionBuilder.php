@@ -7,6 +7,9 @@ use php\Data\DataReader;
 use php\Entity\Beverage;
 use DateTime;
 
+/**
+ * Class BeverageCollectionBuilder reads data and gives back a collection.
+ */
 class BeverageCollectionBuilder
 {
     /**
