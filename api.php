@@ -9,6 +9,7 @@ require_once 'php/Builder/BeverageCollectionBuilder.php';
 use php\Builder\BeverageCollectionBuilder;
 use php\Entity\Beverage;
 
+//HEY! Let's start this app!
 if (!empty($_REQUEST['action'])) {
     $action = $_REQUEST['action'];
     $id = (!empty($_REQUEST['id'])) ? (int) $_REQUEST['id'] : '';
