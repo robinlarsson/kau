@@ -12,7 +12,7 @@ class Beverage
     /** @var string */
     private $beverage;
 
-    /** @var int */
+    /** @var int */ 
     private $volume;
 
     /** @var int */
