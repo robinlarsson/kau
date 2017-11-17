@@ -6,7 +6,7 @@ use DateTime;
 
 class Beverage
 {
-    /** @var int */
+
     private $id;
 
     /** @var string */
